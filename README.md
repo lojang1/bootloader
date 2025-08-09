@@ -6,9 +6,7 @@ This is a bootloader written in assembly, designed to be placed in the first sec
 1. [Overview](#overview)
 2. [Feature](#commands)
 3. [Requirements](#requirements)
-4. [Project Structure](#project_structure)
-5. [Commands](#commands)
-
+4. [Build & Run](#build_&_run)
 
 ## Overview
 
@@ -17,16 +15,7 @@ This project demonstrates:
 - A 32-bit kernel in C (enters protected mode)
 - Designed for x86 real mode
 
-## Project Structure
-`boot/                                                                                                       
-│   ├── src/                                                                                                
-│   │   ├── boot.asm      # Stage 1 bootloader                                                              
-│   │   ├── kernel.h                                                                                        
-│   │   └── kernel.c      # Main kernel logic                                                               
-│   ├── build/                                                                                              
-│   └── bin/                                                                                                
-├── Makefile              # Builds disk image                                                               
-└── docs/                 # Schematics (optional)                                                           `
+## Features
 
-## Commands
+## Build & Run
 - qemu-system-x86_64 -hda bin/os.bin 

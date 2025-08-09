@@ -54,18 +54,37 @@ To enter 32-bit Protected Mode:
 
   2. Far Jump to Flush Pipeline
       - A far jump forces the CPU to reload the CS (code segment) with a 32-bit segment selector from the GDT.
-      -
+      - `jmp CODE_OFFSET:PModeMain`
       - This ensures the CPU is fully in 32-bit mode.
 
 
 4. **Initialize Protected Mode Environment**
 
 After the switch:
+
   1. Update Segment Register
       - Load DS, ES, FS, GS and SS with the Data Segment selector from the GDT.
+
+    mov ax, DATA_OFFSET
+    mov ds, ax         
+    mov es, ax         
+    mov fs, ax         
+    mov ss, ax         
+    mov gs, ax         
+
   2. Set up Stack
       - Initialize ESP (32-bit stack pointer).
 
+    mov ebp, 0x9C00
+    mov esp, ebp   
+
+
+5. **Continue Execution in 32-bit Mode**
+
+Now, the bootloader can:
+  - Access 4 GB of memory (flat memory model).
+  - Execute 32-bit instructions.
+  - Load a kernel into memory and transfer control to it.
 
 ## Requirements
 

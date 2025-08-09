@@ -11,7 +11,7 @@ This project demonstrates:
 
 ## Features
 
-1. **Power-On and BIOS Execution**
+**1. Power-On and BIOS Execution**
 
 When the computer powers on:
 
@@ -19,7 +19,7 @@ When the computer powers on:
   - The BIOS locates a bootable device (e.g. hard disk, USB or CD-ROM) and loads the first 512 bytes (MBR - Master Boot Record) into memory at 0x7C00.
   - The CPU starts executions in 16-bit Real Mode, default mode for x86 processors at boot.
 
-2. **Bootloader Execution in Real Mode**
+**2. Bootloader Execution in Real Mode**
 
 The bootloader begins execution at 0x7C00 in Real Mode (16-bit, 1 MB addressable memory, segmented memory model).
 
@@ -40,7 +40,7 @@ Key Steps in Real Mode:
           - Data segment descriptor (32-bit, readable/writable)
       - The GDT is loaded using LGDT [gdt_descriptor].
 
-3. **Switch to Protected Mode**
+**3. Switch to Protected Mode**
 
 To enter 32-bit Protected Mode:
 
@@ -58,7 +58,7 @@ To enter 32-bit Protected Mode:
       - This ensures the CPU is fully in 32-bit mode.
 
 
-4. **Initialize Protected Mode Environment**
+**4. Initialize Protected Mode Environment**
 
 After the switch:
 
@@ -79,7 +79,7 @@ After the switch:
     mov esp, ebp   
 
 
-5. **Continue Execution in 32-bit Mode**
+**5. Continue Execution in 32-bit Mode**
 
 Now, the bootloader can:
   - Access 4 GB of memory (flat memory model).

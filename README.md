@@ -29,8 +29,9 @@ When the computer powers on:
 The bootloader begins execution at 0x7C00 in Real Mode (16-bit, 1 MB addressable memory, segmented memory model).
 
 Key Steps in Real Mode:
+
     1. Disable Interrupts (cli)
-          - Prevents interrupts from interfering with the mode switch.
+          - Prevents interrupts from interfering with the mode switch.    
     2. Set Up Segments
           - Initialize segment register (DS, ES, SS) to ensure proper memory access.
     3. Enable A20 Line

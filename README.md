@@ -10,15 +10,16 @@ This is a bootloader written in assembly, designed to be placed in the first sec
 
 ## Project Structure
 `
-/boot/
-│   ├── src/  
-│   │   ├── boot.asm      # Stage 1 bootloader
-│   │   ├── kernel.h
-│   │   └── kernel.c      # Main kernel logic 
-│   ├── build/  
-│   └── bin/  
-├── Makefile              # Builds disk image
-└── docs/                 # Schematics (optional)
+/
+boot/                                                           
+│   ├── src/                                                    
+│   │   ├── boot.asm      # Stage 1 bootloader                  
+│   │   ├── kernel.h                                            
+│   │   └── kernel.c      # Main kernel logic                   
+│   ├── build/                                                  
+│   └── bin/                                                    
+├── Makefile              # Builds disk image                   
+└── docs/                 # Schematics (optional)               
 `
 
 ## Commands

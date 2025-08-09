@@ -45,9 +45,9 @@ Key Steps in Real Mode:
 To enter 32-bit Protected Mode:
 
   1. Set the Protected Enable (PE) Bit in CR0
-      - `mov eax, cr0`
-      - `or al, 1       ; Set PE bit (bit 0)`
-      - `mov cr0, eax`
+      `mov eax, cr0`
+      `or al, 1       ; Set PE bit (bit 0)`
+      `mov cr0, eax`
       - This switches the CPU to protected mode, but still uses 16-bit segments.
   2. Far Jump to Flush Pipeline
       - A far jump forces the CPU to reload the CS (code segment) with a 32-bit segment selector from the GDT.
@@ -55,8 +55,13 @@ To enter 32-bit Protected Mode:
       - This ensures the CPU is fully in 32-bit mode.
 
 
-4. **Switch to Protected Mode**
+4. **Initialize Protected Mode Environment**
 
+After the switch:
+  1. Update Segment Register
+      - Load DS, ES, FS, GS and SS with the Data Segment selector from the GDT.
+  2. Set up Stack
+      - Initialize ESP (32-bit stack pointer).
 
 
 ## Requirements

@@ -9,9 +9,7 @@ This is a bootloader written in assembly, designed to be placed in the first sec
 4.
 
 ## Project Structure
-`
-/
-boot/                                                           
+`boot/                                                           
 │   ├── src/                                                    
 │   │   ├── boot.asm      # Stage 1 bootloader                  
 │   │   ├── kernel.h                                            
@@ -19,8 +17,7 @@ boot/
 │   ├── build/                                                  
 │   └── bin/                                                    
 ├── Makefile              # Builds disk image                   
-└── docs/                 # Schematics (optional)               
-`
+└── docs/                 # Schematics (optional)               `
 
 ## Commands
 - qemu-system-x86_64 -hda bin/os.bin 

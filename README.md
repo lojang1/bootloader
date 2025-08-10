@@ -86,7 +86,17 @@ Now, the bootloader can:
   - Execute 32-bit instructions.
   - Load a kernel into memory and transfer control to it.
 
-## Requirements
+### Requirements
+  - NASM (for assembling ASM)
+  - GCC (cross-compiler for kernel)
+  - Qemu (for emulation)
 
-## Build & Run
-- qemu-system-x86_64 -hda bin/os.bin 
+### Build & Run
+Command to build:
+- `make`
+
+Command to view binary:
+- `bless bin/os.bin`
+
+Command to run:
+- `qemu-system-x86_64 -hda bin/os.bin` 
